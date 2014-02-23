@@ -17,6 +17,10 @@ public class StringLexicalUnitGetter implements LexicalUnitGetter {
             put(".", LexicalType.OUT);
             put("[", LexicalType.LOOP);
             put("]", LexicalType.JUMP);
+            put("\n", LexicalType.NOP);
+            put("\t", LexicalType.NOP);
+            put(" ", LexicalType.NOP);
+            put("\r", LexicalType.NOP);
         }
     };
     private String proc;
@@ -43,6 +47,7 @@ public class StringLexicalUnitGetter implements LexicalUnitGetter {
         while (true) {
             sb.append(proc.substring(l, l+1));
             temp = sb.toString();
+            
             if(types.containsKey(temp)){
                 unit = new LexicalUnit(types.get(temp));
                 this.proc = this.proc.substring(l+1, f);

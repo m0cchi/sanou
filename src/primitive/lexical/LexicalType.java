@@ -8,5 +8,6 @@ public enum LexicalType {
     OUT,    //output
     LOOP,   //LOOP LABEL
     JUMP,    //JUMP to LOOP LABEL
+    NOP,    //no operation
     END
 }

@@ -68,6 +68,8 @@ public class StmtList implements Node {
             case RIGHT:
                 node = new RIGHT(env);
                 break;
+            case NOP:
+                continue;
             default:
                 node = null;
             }
