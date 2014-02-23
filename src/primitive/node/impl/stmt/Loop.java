@@ -2,7 +2,9 @@ package primitive.node.impl.stmt;
 
 import primitive.env.Enviroment;
 import primitive.env.Memory;
+import primitive.lexical.LexicalAnalyzer;
 import primitive.lexical.LexicalType;
+import primitive.lexical.LexicalUnit;
 import primitive.node.Node;
 
 public class Loop implements Node {
@@ -25,9 +27,14 @@ public class Loop implements Node {
 
     @Override
     public boolean parse() {
+        LexicalAnalyzer lex = env.getLexicalAnalyzer();
+        LexicalUnit unit;
+        LexicalType type;
         stmtlist = new StmtList(env);
         if (stmtlist.parse()) {
-            return env.getLexicalAnalyzer().get().getType() == LexicalType.JUMP;
+            unit = lex.get();
+            type = unit.getType();
+            return type == LexicalType.JUMP;
         }
         return false;
     }
