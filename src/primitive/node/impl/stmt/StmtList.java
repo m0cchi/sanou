@@ -1,10 +1,8 @@
 package primitive.node.impl.stmt;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 import primitive.env.Enviroment;
-import primitive.env.Pointer;
 import primitive.lexical.LexicalAnalyzer;
 import primitive.lexical.LexicalType;
 import primitive.lexical.LexicalUnit;
@@ -18,17 +16,15 @@ import primitive.node.impl.terminal.SUB;
 public class StmtList implements Node {
     private Enviroment env;
     private ArrayList<Node> list;
+
     public StmtList(Enviroment env) {
         this.env = env;
         this.list = new ArrayList<Node>();
     }
 
-    private void parse(LexicalType type) {
-    }
-
     @Override
     public char get() {
-        for (Node node:list) {
+        for (Node node : list) {
             node.get();
         }
         return 0;
@@ -73,7 +69,7 @@ public class StmtList implements Node {
             default:
                 node = null;
             }
-            if(node != null && node.parse())
+            if (node != null && node.parse())
                 list.add(node);
             else
                 return false;
