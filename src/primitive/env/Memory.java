@@ -22,8 +22,4 @@ public class Memory {
     public char get() {
         return mem;
     }
-
-    public void out() {
-        System.out.print(mem);
-    }
 }

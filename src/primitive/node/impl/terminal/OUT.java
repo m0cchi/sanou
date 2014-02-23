@@ -1,6 +1,7 @@
 package primitive.node.impl.terminal;
 
 import primitive.env.Enviroment;
+import primitive.env.Memory;
 import primitive.node.Node;
 
 public class OUT implements Node{
@@ -10,7 +11,9 @@ public class OUT implements Node{
     }
     @Override
     public char get() {
-        env.getMemory().out();
+        Memory memory = env.getMemory();
+        char mem = memory.get();
+        System.out.print(mem);
         return 0;
     }
     @Override
