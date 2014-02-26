@@ -17,6 +17,12 @@ public class Enviroment {
         this.outFrame = new SystemOut();
     }
 
+    public Enviroment(LexicalAnalyzer lexicalAnalyzer,OutFrame out) {
+        this.pointer = new Pointer();
+        this.lexicalAnalyzer = lexicalAnalyzer;
+        this.outFrame = out;
+    }
+
     public LexicalAnalyzer getLexicalAnalyzer() {
         return lexicalAnalyzer;
     }
