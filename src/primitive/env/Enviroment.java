@@ -5,7 +5,7 @@ import primitive.lexical.LexicalAnalyzer;
 
 public class Enviroment {
     // constant
-    public static final String VERSION = "OMOCHI_CORE_1.1";
+    public static final String VERSION = "OMOCHI_CORE_1.2";
     //
     private Pointer pointer;
     private LexicalAnalyzer lexicalAnalyzer;
