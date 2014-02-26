@@ -13,7 +13,7 @@ public class OUT implements Node{
     public char get() {
         Memory memory = env.getMemory();
         char mem = memory.get();
-        System.out.print(mem);
+        env.write(mem);
         return 0;
     }
     @Override
