@@ -70,7 +70,15 @@ public class StringLexicalUnitGetter implements LexicalUnitGetter {
 
     @Override
     public LexicalUnit peek() {
-        return stack.peek();
+        LexicalUnit unit = null;
+        if(stack.isEmpty()){
+            unit = get();
+            unget(unit);
+        }else {
+            unit = stack.peek();
+        }
+        
+        return unit;
     }
 
 }
