@@ -1,6 +1,6 @@
 package primitive.env;
 
-import primitive.env.interfaze.OutFrame;
+import primitive.env.interfaze.OutPutInterface;
 import primitive.lexical.LexicalAnalyzer;
 
 public class Enviroment {
@@ -9,18 +9,18 @@ public class Enviroment {
     //
     private Pointer pointer;
     private LexicalAnalyzer lexicalAnalyzer;
-    private OutFrame outFrame;
+    private OutPutInterface outPutInterface;
 
     public Enviroment(LexicalAnalyzer lexicalAnalyzer) {
         this.pointer = new Pointer();
         this.lexicalAnalyzer = lexicalAnalyzer;
-        this.outFrame = new SystemOut();
+        this.outPutInterface = new SystemOut();
     }
 
-    public Enviroment(LexicalAnalyzer lexicalAnalyzer,OutFrame out) {
+    public Enviroment(LexicalAnalyzer lexicalAnalyzer,OutPutInterface out) {
         this.pointer = new Pointer();
         this.lexicalAnalyzer = lexicalAnalyzer;
-        this.outFrame = out;
+        this.outPutInterface = out;
     }
 
     public LexicalAnalyzer getLexicalAnalyzer() {
@@ -40,6 +40,6 @@ public class Enviroment {
     }
 
     public void write(char c) {
-        outFrame.write(c);
+        outPutInterface.write(c);
     }
 }

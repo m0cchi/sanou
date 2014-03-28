@@ -1,8 +1,8 @@
 package primitive.env;
 
-import primitive.env.interfaze.OutFrame;
+import primitive.env.interfaze.OutPutInterface;
 
-public class SystemOut implements OutFrame{
+public class SystemOut implements OutPutInterface{
 
     @Override
     public void write(char c) {
