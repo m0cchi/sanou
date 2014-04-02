@@ -8,6 +8,7 @@ import primitive.lexical.LexicalType;
 import primitive.lexical.LexicalUnit;
 import primitive.node.Node;
 import primitive.node.impl.terminal.ADD;
+import primitive.node.impl.terminal.IN;
 import primitive.node.impl.terminal.LEFT;
 import primitive.node.impl.terminal.MEMDUMP;
 import primitive.node.impl.terminal.OUT;
@@ -58,6 +59,9 @@ public class StmtList implements Node {
                 break;
             case OUT:
                 node = new OUT(env);
+                break;
+            case IN:
+                node = new IN(env);
                 break;
             case LEFT:
                 node = new LEFT(env);
