@@ -19,7 +19,7 @@ public class Pointer {
     }
     
     public Pointer right(){
-        if(this.right == null){
+        if(!hasRight()){
             this.right = new Pointer();
             this.right.left = this;
         }
@@ -28,6 +28,10 @@ public class Pointer {
     
     public boolean hasLeft(){
         return this.left != null;
+    }
+    
+    public boolean hasRight(){
+        return this.right != null;
     }
     
     public void setMemory(Memory memory){
