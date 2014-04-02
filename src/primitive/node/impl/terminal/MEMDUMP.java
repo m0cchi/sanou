@@ -12,9 +12,11 @@ public class MEMDUMP implements Node{
     }
     @Override
     public char get() {
-        int no = 0;
+        int no = 0,thisNo = -1;
         char ch = 0;
         Pointer p = env.getPointer();
+        final Pointer finalPointer = p;
+        StringBuffer sb = new StringBuffer();
         //get top
         while(p.hasLeft()){
             p = p.left();
@@ -23,10 +25,14 @@ public class MEMDUMP implements Node{
         System.out.println("\n---- memory dump ----");
         while(p.hasRight()){
             ch = p.getMemory().get();
-            System.out.println("addr:0x"+ Integer.toHexString((no)) + " val:0x" + Integer.toHexString((int)ch));
+            if(p == finalPointer){
+                System.out.println("current pointer - no:0x" + Integer.toHexString((no)));
+            }
+            sb.append("addr:0x"+ Integer.toHexString((no)) + " val:0x" + Integer.toHexString((int)ch) + "\n");
             p = p.right();
             no++;
         }
+        System.out.println(sb);
         System.out.println("---------------------");
         return 0;
     }
