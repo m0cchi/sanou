@@ -27,6 +27,10 @@ public class Enviroment {
         return lexicalAnalyzer;
     }
 
+    public Pointer getPointer(){
+        return pointer;
+    }
+
     public void left() {
         pointer = pointer.left();
     }
