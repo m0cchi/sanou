@@ -12,7 +12,7 @@ public class MEMDUMP implements Node{
     }
     @Override
     public char get() {
-        int no = 0,thisNo = -1;
+        int no = 0;
         char ch = 0;
         Pointer p = env.getPointer();
         final Pointer finalPointer = p;
