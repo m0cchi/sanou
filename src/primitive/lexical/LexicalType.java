@@ -6,6 +6,7 @@ public enum LexicalType {
     ADD,    //increment
     SUB,    //decrement 
     OUT,    //output
+    IN,    //input
     LOOP,   //LOOP LABEL
     JUMP,    //JUMP to LOOP LABEL
     NOP,    //no operation

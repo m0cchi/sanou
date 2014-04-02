@@ -15,6 +15,7 @@ public class StringLexicalUnitGetter implements LexicalUnitGetter {
             put("+", LexicalType.ADD);
             put("-", LexicalType.SUB);
             put(".", LexicalType.OUT);
+            put(",", LexicalType.IN);
             put("[", LexicalType.LOOP);
             put("]", LexicalType.JUMP);
             put("\n", LexicalType.NOP);
