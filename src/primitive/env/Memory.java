@@ -22,4 +22,8 @@ public class Memory {
     public char get() {
         return mem;
     }
+    
+    public void set(char ch){
+        mem = ch;
+    }
 }
