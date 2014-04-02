@@ -9,5 +9,6 @@ public enum LexicalType {
     LOOP,   //LOOP LABEL
     JUMP,    //JUMP to LOOP LABEL
     NOP,    //no operation
+    MEMDUMP,    //memory dump
     END
 }

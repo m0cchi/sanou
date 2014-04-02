@@ -21,6 +21,7 @@ public class StringLexicalUnitGetter implements LexicalUnitGetter {
             put("\t", LexicalType.NOP);
             put(" ", LexicalType.NOP);
             put("\r", LexicalType.NOP);
+            put("\\", LexicalType.MEMDUMP);
         }
     };
     private String proc;
